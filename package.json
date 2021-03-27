@@ -1,0 +1,32 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "main": "server.js",
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm start build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server, client' -c 'red,green' \"nodemon server.js\" \"npm run client\" "
+  },
+  "keywords": [],
+  "author": "Sameer Rao",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {},
+  "description": "Login App"
+}
